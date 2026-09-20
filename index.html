@@ -1,0 +1,2094 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Slipring 2026</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Slipring 2026" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Slipring 2026&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;
+&lt;div id=&quot;slipring-2026&quot; lang=&quot;th&quot;&gt;
+  &lt;h2&gt;Slip Ring Motor · มกราคม–กรกฎาคม 2026&lt;/h2&gt;
+  &lt;div class=&quot;viz-grid&quot;&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div&gt;รายงานที่อ่าน&lt;/div&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;7 เดือน&lt;/div&gt;&lt;div class=&quot;text-small&quot;&gt;34 รายการต่อรายงาน&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div&gt;รายการที่มีผลตรวจ&lt;/div&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;195&lt;/div&gt;&lt;div class=&quot;text-small&quot;&gt;นับซ้ำมอเตอร์ระหว่างเดือน&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;card viz-stat&quot;&gt;&lt;div&gt;แปรงถ่านที่รายงานว่าเปลี่ยน&lt;/div&gt;&lt;div class=&quot;viz-stat-value&quot;&gt;185 ชิ้น&lt;/div&gt;&lt;div class=&quot;text-small&quot;&gt;C40Z3 154 · CM3H 31&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;section aria-labelledby=&quot;month-title&quot;&gt;
+  &lt;h3 id=&quot;month-title&quot;&gt;1. สรุปรายการเปลี่ยนในเดือนที่เลือก&lt;/h3&gt;
+  &lt;label class=&quot;form-label&quot; for=&quot;report-month&quot;&gt;เดือนสำหรับสรุปและกราฟโดนัท&lt;select class=&quot;form-select&quot; id=&quot;report-month&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+  &lt;p class=&quot;text-small&quot;&gt;ปี 2026 · มี PDF ถึงกรกฎาคม · สิงหาคม–กันยายนยังไม่มีรายงาน · ยอดรวมด้านบนเป็นยอดทั้งชุดข้อมูล&lt;/p&gt;
+  &lt;div id=&quot;month-summary&quot; class=&quot;card&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+  &lt;h3&gt;สัดส่วนแปรงถ่านที่เปลี่ยนตาม Equipment&lt;/h3&gt;
+  &lt;div id=&quot;month-explore-layout&quot;&gt;
+  &lt;div id=&quot;month-donut-layout&quot;&gt;&lt;div id=&quot;month-donut&quot;&gt;&lt;/div&gt;&lt;div id=&quot;month-donut-legend&quot; class=&quot;viz-row&quot; aria-label=&quot;เลือก Equipment เพื่อดูรายละเอียด&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div id=&quot;month-selected-panel&quot; hidden aria-live=&quot;polite&quot;&gt;
+    &lt;div class=&quot;viz-row&quot;&gt;&lt;h3 id=&quot;month-selected-title&quot;&gt;&lt;/h3&gt;&lt;button id=&quot;month-selected-close&quot; type=&quot;button&quot; class=&quot;btn btn-ghost&quot;&gt;ซ่อนรายละเอียด&lt;/button&gt;&lt;/div&gt;
+    &lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-sm&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Equipment&lt;/th&gt;&lt;th&gt;ตำแหน่ง / ชนิดแปรงถ่านที่เปลี่ยน&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;รวม (ก้อน)&lt;/th&gt;&lt;th&gt;ประวัติ&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody id=&quot;month-equipment-rows&quot;&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;กดส่วนของกราฟหรือชื่อ Equipment เพื่อแสดงรายละเอียดด้านข้าง · เปอร์เซ็นต์คิดจากจำนวนก้อนทั้งหมดในเดือนที่เลือก&lt;/div&gt;
+  &lt;/section&gt;
+  &lt;hr&gt;
+  &lt;section aria-labelledby=&quot;history-title&quot;&gt;
+  &lt;h3 id=&quot;history-title&quot;&gt;2. ประวัติ Equipment ตั้งแต่มกราคมถึงรายงานล่าสุด&lt;/h3&gt;
+  &lt;div class=&quot;viz-controls&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;history-equipment&quot;&gt;Equipment&lt;select class=&quot;form-select&quot; id=&quot;history-equipment&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;history-position&quot;&gt;ตำแหน่ง&lt;select class=&quot;form-select&quot; id=&quot;history-position&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;history-summary&quot; class=&quot;card&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+  &lt;p class=&quot;text-small&quot;&gt;ยอดรวมทุกเดือนที่มีรายงาน ไม่ถูกจำกัดโดยตัวเลือกเดือนด้านบน · ข้อมูลล่าสุดกรกฎาคม 2026; สิงหาคม–กันยายนยังไม่มี PDF&lt;/p&gt;
+  &lt;h3&gt;จำนวนแปรงถ่านที่เปลี่ยนรายเดือน (ก้อน)&lt;/h3&gt;
+  &lt;div id=&quot;history-line&quot;&gt;&lt;/div&gt;
+  &lt;label class=&quot;form-label&quot; for=&quot;history-detail-month&quot;&gt;เลือกเดือนหรือกดจุดบนกราฟเพื่อดูรายละเอียด&lt;select id=&quot;history-detail-month&quot; class=&quot;form-select&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+  &lt;div class=&quot;text-small&quot;&gt;สิงหาคม–กันยายนยังไม่มีรายงาน จึงไม่แสดงเป็นจุดศูนย์บนกราฟ&lt;/div&gt;
+  &lt;div id=&quot;history-month-breakdown&quot;&gt;&lt;/div&gt;
+  &lt;h3&gt;3. แนวโน้มยอดเปลี่ยนและยอดสะสม (ก้อน)&lt;/h3&gt;
+  &lt;div id=&quot;trend-scope&quot; class=&quot;text-small&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;viz-row text-small&quot;&gt;&lt;span&gt;&lt;span class=&quot;swatch s1&quot;&gt;&lt;/span&gt;C40Z3&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;swatch s2&quot;&gt;&lt;/span&gt;CM3H&lt;/span&gt;&lt;span&gt;0 = ไม่พบบันทึกเปลี่ยนในรายงานเดือนนั้น&lt;/span&gt;&lt;/div&gt;
+  &lt;div id=&quot;equipment-trend&quot; role=&quot;img&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;ยอดสะสม = ผลรวมรายการตั้งแต่มกราคมถึงเดือนนั้น · เดือนที่ไม่มี PDF ไม่แสดงเป็น 0&lt;/div&gt;
+  &lt;p class=&quot;text-small&quot;&gt;ยอดสะสมจากรายงาน ม.ค.–ก.ค. 2026 ตามชื่อ Equipment / ตำแหน่ง ไม่ใช่ประวัติตลอดอายุของมอเตอร์ · วันที่เปลี่ยนจริงไม่ได้ระบุใน PDF; วันที่ด้านล่างเป็น Reported Date ในตารางหลักเท่านั้น&lt;/p&gt;
+  &lt;div class=&quot;text-small&quot;&gt;บนหน้าจอเล็ก เลื่อนตารางแนวนอนเพื่อดูข้อมูลครบทุกช่อง&lt;/div&gt;
+  &lt;div class=&quot;table-responsive&quot;&gt;&lt;table id=&quot;history-table&quot; class=&quot;table table-sm&quot;&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;รายงาน&lt;/th&gt;&lt;th&gt;Equipment / ตำแหน่ง&lt;/th&gt;&lt;th&gt;ชนิด&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;ก้อน&lt;/th&gt;&lt;th&gt;วันที่บันทึก&lt;br&gt;(ไม่ใช่วันเปลี่ยนที่ยืนยัน)&lt;/th&gt;&lt;th&gt;หมายเหตุ&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody id=&quot;history-rows&quot;&gt;&lt;/tbody&gt;
+  &lt;/table&gt;&lt;/div&gt;
+  &lt;details&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;วิธีอ่านประวัติและตรวจสอบแหล่งข้อมูล&lt;/summary&gt;&lt;ul&gt;&lt;li&gt;แต่ละแถวถอดจากตาราง “รายการสรุปที่ได้เปลี่ยน” หน้า 1 ของ PDF ชื่อไฟล์แสดงในช่องรายงาน&lt;/li&gt;&lt;li&gt;คำว่า “ล่าสุด” หมายถึงเดือนรายงานล่าสุดที่มีบันทึก ไม่ใช่วันเปลี่ยนจริง ไม่มีการใช้วันพิมพ์หรือกำหนด PM ครั้งถัดไปเป็นวันเปลี่ยน&lt;/li&gt;&lt;li&gt;S1 ในตารางเปลี่ยนไม่ได้แยก HD/TE; วันที่นำมาแสดงอ้างอิง S1 (HD) ที่ตำแหน่งตรงกันในเดือนนั้น&lt;/li&gt;&lt;li&gt;รายการที่ตำแหน่งหรือชนิดแปรงถ่านไม่สอดคล้องกันคงชื่อตามตารางเปลี่ยน และไม่ยืนยันวันที่เชื่อมโยง&lt;/li&gt;&lt;li&gt;C1 MD-1 เดือนมิถุนายนมี 2 แถว (2 และ 1 ก้อน) เก็บไว้ทั้งสองแถว รวม 3 ก้อน ไม่ตีความว่าเปลี่ยนคนละวัน&lt;/li&gt;&lt;li&gt;ยอดเป็นผลรวมตามรายงาน ไม่ได้ยืนยันกับใบงานเพื่อคัดรายการซ้ำข้ามเดือน และไม่ได้ผูก Serial Number เพราะตารางเปลี่ยนไม่ระบุหมายเลขมอเตอร์&lt;/li&gt;&lt;li&gt;ตำแหน่งที่ไม่พบรายการแสดง “ไม่พบบันทึกการเปลี่ยนในชุดรายงาน” ไม่ใช่ยืนยันว่าไม่เคยเปลี่ยน&lt;/li&gt;&lt;/ul&gt;&lt;/details&gt;
+  &lt;/section&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;จุดต่ำกว่าเกณฑ์ในรายงานกรกฎาคม&lt;/h3&gt;
+  &lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-sm&quot;&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;มอเตอร์&lt;/th&gt;&lt;th&gt;ตำแหน่ง / ความยาว (มม.)&lt;/th&gt;&lt;th&gt;สถานะหลักฐาน&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;B3 MD-1&lt;/td&gt;&lt;td&gt;L3 19.75 · L5 24.11&lt;br&gt;M2 23.30 · M3 20.42&lt;/td&gt;&lt;td&gt;4 จุด &amp;lt;25 มม.&lt;br&gt;มีบันทึกเปลี่ยน 4 ชิ้น&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C1 MD-1&lt;/td&gt;&lt;td&gt;M5 23.15&lt;/td&gt;&lt;td&gt;1 จุด &amp;lt;25 มม.&lt;br&gt;มีบันทึกเปลี่ยน 3 ชิ้น&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;/table&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;สถานะหลังเปลี่ยน: ยังไม่ยืนยันจากรายงาน · วันตรวจทั้งสองรายการ 5 ส.ค. 2026&lt;/div&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;จำนวนแปรงถ่านที่เปลี่ยนรายเดือน (ชิ้น)&lt;/h3&gt;
+  &lt;div class=&quot;viz-row text-small&quot;&gt;&lt;span&gt;&lt;span class=&quot;swatch s1&quot;&gt;&lt;/span&gt;C40Z3&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;swatch s2&quot;&gt;&lt;/span&gt;CM3H&lt;/span&gt;&lt;span&gt;ตัวเลขท้ายแถบ = รวม&lt;/span&gt;&lt;/div&gt;
+  &lt;div id=&quot;slipring-bars&quot; role=&quot;img&quot; aria-label=&quot;จำนวนแปรงถ่านที่เปลี่ยน มกราคม 24 กุมภาพันธ์ 23 มีนาคม 26 เมษายน 20 พฤษภาคม 31 มิถุนายน 22 กรกฎาคม 39 ชิ้น&quot;&gt;&lt;/div&gt;
+  &lt;h3&gt;สรุปผลตรวจแต่ละเดือน&lt;/h3&gt;
+  &lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-sm&quot;&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;เดือน&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;มีผลตรวจ / สำรอง&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;ต่ำสุด&lt;br&gt;(มม.)&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;จุด &amp;lt;25 มม.&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;ฉนวน After ต่ำสุด&lt;br&gt;(MΩ)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody id=&quot;slipring-months&quot;&gt;&lt;/tbody&gt;
+  &lt;/table&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;ความยาว: ใช้ค่าต่ำสุดในคอลัมน์ Min · ฉนวน: ใช้คอลัมน์ After โดยแปลง GΩ เป็น MΩ · ไม่มีเกณฑ์ตัดสินผ่าน/ไม่ผ่านฉนวนในเอกสาร&lt;/div&gt;
+  &lt;h3&gt;รายละเอียดรายเดือน&lt;/h3&gt;
+  &lt;div id=&quot;slipring-details&quot;&gt;&lt;/div&gt;
+  &lt;hr&gt;
+  &lt;details&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;ขอบเขตข้อมูลและข้อควรตรวจสอบ&lt;/summary&gt;
+    &lt;ul&gt;&lt;li&gt;จัดเดือนตามหัวรายงาน ไม่ใช่เดือนของวันตรวจหรือวันพิมพ์ รายงานบางฉบับมีวันตรวจข้ามเดือน&lt;/li&gt;&lt;li&gt;รายการมีผลตรวจคือแถวที่มีค่าความยาวและค่าฉนวน ไม่ใช่อัตราทำ PM สำเร็จ และไม่ใช่จำนวนมอเตอร์ไม่ซ้ำ&lt;/li&gt;&lt;li&gt;ใช้เกณฑ์เปลี่ยนแปรงถ่าน &amp;lt;25 มม. ตามคำอธิบายในแบบฟอร์ม ค่าเท่ากับ 25.00 มม. แยกไว้เป็นจุดชิดเกณฑ์&lt;/li&gt;&lt;li&gt;จำนวนเปลี่ยนอ้างอิงแถว “เปลี่ยนครั้งนี้” ยอดคงเหลือเป็นตัวเลขตามรายงาน ยังไม่ตรวจสอบกับทะเบียนเบิกจ่าย&lt;/li&gt;&lt;li&gt;เมษายน S2A MD-4 ระบุ 81.8 GΩ; พฤษภาคม 144.2 GΩ และกรกฎาคม 182.7 GΩ ขณะที่หลายเดือนระบุหน่วย MΩ ควรยืนยันหน่วยก่อนใช้วิเคราะห์แนวโน้มฉนวน&lt;/li&gt;&lt;li&gt;ชื่อ Equipment / Position บางรายการเปลี่ยนระหว่างเดือน การติดตามมอเตอร์รายตัวควรยึด Serial Number ร่วมด้วย&lt;/li&gt;&lt;li&gt;ไม่พบรายงานสิงหาคม–ธันวาคมในโฟลเดอร์ที่อ่าน จึงไม่แสดงเป็นผลตรวจศูนย์&lt;/li&gt;&lt;/ul&gt;
+  &lt;/details&gt;
+&lt;/div&gt;
+&lt;style&gt;
+#slipring-2026 .swatch{display:inline-block;width:12px;height:12px;margin-right:6px}
+#slipring-2026 .s1{background:var(--viz-series-1)}
+#slipring-2026 .s2{background:var(--viz-series-2)}
+#slipring-2026 .bar-row{display:grid;grid-template-columns:42px minmax(0,1fr) 34px;gap:12px;align-items:center;margin:12px 0}
+#slipring-2026 .bar-track{background:var(--muted);height:24px;display:flex}
+#slipring-2026 .bar-segment{height:100%}
+#slipring-2026 details{margin:12px 0}
+#slipring-2026 summary{font-weight:500}
+#slipring-2026 .detail-metrics{display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0}
+#slipring-2026 li{margin:8px 0}
+#slipring-2026 #history-table{min-width:760px}
+#slipring-2026 .trend-row{display:grid;grid-template-columns:42px minmax(0,1fr) 40px minmax(0,1fr) 40px;gap:8px;align-items:center;margin:12px 0}
+#slipring-2026 .trend-total{background:var(--viz-series-1);height:24px}
+#slipring-2026 #month-donut-layout{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin:16px 0}
+#slipring-2026 #month-donut{width:280px;max-width:100%;flex-shrink:0}
+#slipring-2026 #month-donut-legend{flex:1;min-width:220px;align-items:flex-start;flex-direction:column}
+#slipring-2026 .donut-svg{display:block;width:100%;height:auto}
+#slipring-2026 .donut-svg text{fill:var(--foreground)}
+#slipring-2026 #month-explore-layout{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+#slipring-2026 #month-donut-layout{flex:0 1 540px}
+#slipring-2026 #month-selected-panel{flex:1 1 340px;min-width:0}
+#slipring-2026 #month-selected-panel[hidden]{display:none}
+#slipring-2026 .history-line-svg{display:block;width:100%}
+#slipring-2026 .history-line-svg text{fill:var(--foreground);font-size:12px}
+&lt;/style&gt;
+&lt;script&gt;
+(() =&gt; {
+  const root = document.getElementById(&#x27;slipring-2026&#x27;);
+  const rows = [
+    {m:&#x27;ม.ค.&#x27;,name:&#x27;มกราคม&#x27;,file:&#x27;01. Jan 26.pdf&#x27;,n:30,s:4,min:25.35,ir:86.6,a:20,b:4,stock:[200,126],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุดอยู่ที่ B3 MD-1 (25.35 มม.) ใกล้เกณฑ์เปลี่ยน; ฉนวน After ต่ำสุด S2A MD-4 = 86.6 MΩ&#x27;},
+    {m:&#x27;ก.พ.&#x27;,name:&#x27;กุมภาพันธ์&#x27;,file:&#x27;02. Feb 26.pdf&#x27;,n:27,s:7,min:25.31,ir:103.8,a:22,b:1,stock:[218,133],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุด S2B MD-1 = 25.31 มม.; ฉนวน After ต่ำสุด S2A MD-4 = 103.8 MΩ รายงานมีวันตรวจตั้งแต่มกราคมถึงกุมภาพันธ์&#x27;},
+    {m:&#x27;มี.ค.&#x27;,name:&#x27;มีนาคม&#x27;,file:&#x27;03. Mar 26.pdf&#x27;,n:28,s:6,min:25.00,ir:75.3,a:20,b:6,stock:[242,129],text:&#x27;S5 MD-3 ขนาด 1,000 kW (Serial 528092 14001) มีค่า M2 = 25.00 มม. อยู่ตรงขอบเกณฑ์ ยังไม่ใช่ค่าต่ำกว่า 25 มม.; ฉนวน After ต่ำสุด S2A MD-4 = 75.3 MΩ เป็นค่าต่ำสุดที่บันทึกในชุดรายงานนี้&#x27;},
+    {m:&#x27;เม.ย.&#x27;,name:&#x27;เมษายน&#x27;,file:&#x27;04. Apr 26.pdf&#x27;,n:27,s:7,min:25.64,ir:258,a:19,b:1,stock:[263,140],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุด S5 MD-1 = 25.64 มม.; ฉนวน After ต่ำสุด S2C MD-1 = 258 MΩ มีวันตรวจบางรายการในพฤษภาคม และ B2/B3 มีช่องวันตรวจว่าง&#x27;},
+    {m:&#x27;พ.ค.&#x27;,name:&#x27;พฤษภาคม&#x27;,file:&#x27;05. May 26.pdf&#x27;,n:27,s:7,min:25.17,ir:288,a:25,b:6,stock:[276,136],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุด B1 MD-2 = 25.17 มม.; ฉนวน After ต่ำสุด S2 MD-1 = 288 MΩ ควรตรวจยืนยันหน่วย GΩ ของ S2A MD-4 และ S2B MD-2 ก่อนเปรียบเทียบกับเดือนอื่น&#x27;},
+    {m:&#x27;มิ.ย.&#x27;,name:&#x27;มิถุนายน&#x27;,file:&#x27;06. Jun 26.pdf&#x27;,n:28,s:6,min:25.17,ir:86.6,a:16,b:6,stock:[310,142],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุด S2 MD-2 = 25.17 มม.; ฉนวน After ต่ำสุด S2A MD-4 = 86.6 MΩ รายงานมีวันตรวจในมิถุนายนและกรกฎาคม&#x27;},
+    {m:&#x27;ก.ค.&#x27;,name:&#x27;กรกฎาคม&#x27;,file:&#x27;07. Jul 26.pdf&#x27;,n:28,s:6,min:19.75,ir:110.1,a:32,b:7,stock:[310,147],text:&#x27;พบ 5 จุดต่ำกว่า 25 มม. ใน B3 MD-1 และ C1 MD-1; ค่าต่ำสุด B3 L3 = 19.75 มม. รายงานระบุเปลี่ยน B3 4 ชิ้น และ C1 3 ชิ้น แต่ไม่มีผลวัดหลังเปลี่ยนที่แยกชัดเจน; ฉนวน After ต่ำสุด S3 MD-1 = 110.1 MΩ&#x27;}
+  ];
+  root.querySelector(&#x27;#slipring-bars&#x27;).innerHTML = rows.map(r =&gt; `&lt;div class=&quot;bar-row&quot;&gt;&lt;span&gt;${r.m}&lt;/span&gt;&lt;div class=&quot;bar-track&quot;&gt;&lt;div class=&quot;bar-segment s1&quot; style=&quot;width:${r.a/39*100}%&quot; data-tooltip=&quot;${r.name}: C40Z3 ${r.a} ชิ้น&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar-segment s2&quot; style=&quot;width:${r.b/39*100}%&quot; data-tooltip=&quot;${r.name}: CM3H ${r.b} ชิ้น&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;tabular-nums text-end&quot;&gt;${r.a+r.b}&lt;/span&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
+  root.querySelector(&#x27;#slipring-months&#x27;).innerHTML = rows.map((r,i) =&gt; `&lt;tr&gt;&lt;th&gt;${r.m}&lt;/th&gt;&lt;td class=&quot;text-end&quot;&gt;${r.n} / ${r.s}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${r.min.toFixed(2)}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${i===6?5:0}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${r.ir}&lt;/td&gt;&lt;/tr&gt;`).join(&#x27;&#x27;);
+  root.querySelector(&#x27;#slipring-details&#x27;).innerHTML = rows.map((r,i) =&gt; `&lt;details data-month=&quot;${i}&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;${r.name} · เปลี่ยน ${r.a+r.b} ชิ้น${i===6?&#x27; · พบค่าต่ำกว่าเกณฑ์&#x27;:&#x27;&#x27;}&lt;/summary&gt;&lt;p&gt;${r.text}&lt;/p&gt;&lt;div class=&quot;detail-metrics&quot;&gt;&lt;span&gt;C40Z3: เปลี่ยน ${r.a} / คงเหลือ ${r.stock[0]}&lt;/span&gt;&lt;span&gt;CM3H: เปลี่ยน ${r.b} / คงเหลือ ${r.stock[1]}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;text-small&quot;&gt;แหล่งข้อมูล: ${r.file} · หน้า 1&lt;/div&gt;&lt;/details&gt;`).join(&#x27;&#x27;);
+  // Source rows: [equipment, drive, brush count, brush type, reported date, evidence note].
+  // Reported dates are contextual dates from the main table, never confirmed replacement dates.
+  const A=&#x27;C40Z3&#x27;, B=&#x27;CM3H&#x27;;
+  const s1=&#x27;ตารางเปลี่ยนระบุ S1; วันที่อ้างอิง S1 (HD)&#x27;;
+  const s5=&#x27;ตารางเปลี่ยนระบุ C40Z3 แต่ตำแหน่งนี้ในตารางหลักเป็นมอเตอร์ 1,000 kW; ต้องยืนยันการจับคู่&#x27;;
+  const eventsByMonth = [
+    [[&#x27;S2B&#x27;,3,5,A,&#x27;2026-01-05&#x27;],[&#x27;S2&#x27;,4,2,A,&#x27;2026-01-10&#x27;],[&#x27;S2A&#x27;,2,7,A,&#x27;2026-01-11&#x27;],[&#x27;S2A&#x27;,3,4,A,&#x27;2026-01-11&#x27;],[&#x27;S5&#x27;,2,2,A,null,s5],[&#x27;B2&#x27;,1,3,B,&#x27;2026-01-12&#x27;],[&#x27;C2&#x27;,1,1,B,null,&#x27;ตารางหลักระบุ C2 MD-2 แต่ตารางเปลี่ยนระบุ MD-1&#x27;]],
+    [[&#x27;S1&#x27;,2,1,A,&#x27;2026-02-16&#x27;,s1],[&#x27;S2B&#x27;,1,1,A,&#x27;2026-01-31&#x27;],[&#x27;S2B&#x27;,3,2,A,&#x27;2026-01-31&#x27;],[&#x27;S2B&#x27;,4,1,A,&#x27;2026-01-31&#x27;],[&#x27;S2&#x27;,1,3,A,&#x27;2026-02-06&#x27;],[&#x27;S2&#x27;,4,7,A,&#x27;2026-02-06&#x27;],[&#x27;S3&#x27;,1,7,A,&#x27;2026-02-16&#x27;],[&#x27;C1&#x27;,1,1,B,&#x27;2026-02-16&#x27;]],
+    [[&#x27;S1&#x27;,1,1,A,&#x27;2026-04-01&#x27;,s1],[&#x27;S2B&#x27;,1,2,A,&#x27;2026-03-15&#x27;],[&#x27;S2B&#x27;,3,2,A,&#x27;2026-03-15&#x27;],[&#x27;S2B&#x27;,4,6,A,&#x27;2026-03-15&#x27;],[&#x27;S2&#x27;,1,2,A,&#x27;2026-03-25&#x27;],[&#x27;S2C&#x27;,2,2,A,&#x27;2026-03-15&#x27;],[&#x27;S3&#x27;,1,1,A,&#x27;2026-04-01&#x27;],[&#x27;S5&#x27;,1,2,A,&#x27;2026-04-01&#x27;],[&#x27;S5&#x27;,3,2,A,null,s5],[&#x27;C1&#x27;,1,1,B,&#x27;2026-04-01&#x27;],[&#x27;C2&#x27;,1,2,B,&#x27;2026-04-01&#x27;],[&#x27;B2&#x27;,1,2,B,&#x27;2026-04-01&#x27;],[&#x27;B3&#x27;,1,1,B,&#x27;2026-04-01&#x27;]],
+    [[&#x27;S1&#x27;,2,1,A,&#x27;2026-05-11&#x27;,s1],[&#x27;S2&#x27;,1,1,A,&#x27;2026-04-21&#x27;],[&#x27;S2B&#x27;,1,1,A,&#x27;2026-04-08&#x27;],[&#x27;S2B&#x27;,4,7,A,&#x27;2026-04-08&#x27;],[&#x27;S3&#x27;,1,3,A,&#x27;2026-04-21&#x27;],[&#x27;S5&#x27;,1,2,A,&#x27;2026-04-25&#x27;],[&#x27;S5&#x27;,2,2,A,&#x27;2026-04-25&#x27;],[&#x27;S5&#x27;,3,2,A,null,s5],[&#x27;C1&#x27;,1,1,B,&#x27;2026-04-25&#x27;]],
+    [[&#x27;S1&#x27;,1,5,A,&#x27;2026-05-11&#x27;,s1],[&#x27;S2B&#x27;,1,3,A,&#x27;2026-05-16&#x27;],[&#x27;S2&#x27;,2,7,A,&#x27;2026-05-26&#x27;],[&#x27;S3&#x27;,1,1,A,&#x27;2026-05-26&#x27;],[&#x27;S3&#x27;,2,3,A,&#x27;2026-05-26&#x27;],[&#x27;S5&#x27;,1,5,A,&#x27;2026-06-02&#x27;],[&#x27;S5&#x27;,2,1,A,&#x27;2026-06-02&#x27;],[&#x27;B3&#x27;,1,3,B,&#x27;2026-06-02&#x27;],[&#x27;C1&#x27;,2,2,B,&#x27;2026-06-02&#x27;],[&#x27;B1&#x27;,2,1,B,&#x27;2026-06-02&#x27;]],
+    [[&#x27;S1&#x27;,2,1,A,&#x27;2026-06-16&#x27;,s1],[&#x27;S2B&#x27;,1,4,A,&#x27;2026-06-16&#x27;],[&#x27;S2B&#x27;,4,1,A,&#x27;2026-06-16&#x27;],[&#x27;S2&#x27;,2,7,A,&#x27;2026-06-20&#x27;],[&#x27;S5&#x27;,1,3,A,&#x27;2026-07-05&#x27;],[&#x27;C1&#x27;,1,2,B,&#x27;2026-07-05&#x27;,&#x27;แถวแรกของ C1 MD-1 ในตารางเปลี่ยนเดือนนี้&#x27;],[&#x27;C1&#x27;,1,1,B,&#x27;2026-07-05&#x27;,&#x27;แถวที่สองของ C1 MD-1 ในตารางเปลี่ยนเดือนนี้&#x27;],[&#x27;B1&#x27;,2,1,B,null,&#x27;ตารางหลักระบุ B1 MD-1 แต่ตารางเปลี่ยนระบุ MD-2&#x27;],[&#x27;B2&#x27;,1,2,B,&#x27;2026-07-25&#x27;]],
+    [[&#x27;S2C&#x27;,1,1,A,&#x27;2026-07-15&#x27;],[&#x27;S2C&#x27;,3,1,A,&#x27;2026-07-15&#x27;],[&#x27;S2B&#x27;,1,1,A,&#x27;2026-07-25&#x27;],[&#x27;S2B&#x27;,2,2,A,&#x27;2026-07-25&#x27;],[&#x27;S2&#x27;,1,1,A,&#x27;2026-07-30&#x27;],[&#x27;S2&#x27;,2,5,A,&#x27;2026-07-30&#x27;],[&#x27;S2&#x27;,3,3,A,&#x27;2026-07-30&#x27;],[&#x27;S5&#x27;,1,18,A,&#x27;2026-08-05&#x27;],[&#x27;B3&#x27;,1,4,B,&#x27;2026-08-05&#x27;],[&#x27;C1&#x27;,1,3,B,&#x27;2026-08-05&#x27;]]
+  ];
+  const events=eventsByMonth.flatMap((list,month)=&gt;list.map(([equipment,position,count,type,date,note=&#x27;&#x27;])=&gt;({equipment,position,count,type,date,note,month})));
+  const equipmentSelect=root.querySelector(&#x27;#history-equipment&#x27;);
+  const monthSelect=root.querySelector(&#x27;#report-month&#x27;);
+  const monthNames=[&#x27;มกราคม&#x27;,&#x27;กุมภาพันธ์&#x27;,&#x27;มีนาคม&#x27;,&#x27;เมษายน&#x27;,&#x27;พฤษภาคม&#x27;,&#x27;มิถุนายน&#x27;,&#x27;กรกฎาคม&#x27;,&#x27;สิงหาคม&#x27;,&#x27;กันยายน&#x27;];
+  monthSelect.innerHTML=monthNames.map((m,i)=&gt;`&lt;option value=&quot;${i}&quot;&gt;${m} 2026${i&gt;=rows.length?&#x27; — ยังไม่มี PDF&#x27;:&#x27;&#x27;}&lt;/option&gt;`).join(&#x27;&#x27;);
+  monthSelect.value=&#x27;6&#x27;;
+  const positionSelect=root.querySelector(&#x27;#history-position&#x27;);
+  const equipments=[...new Set(events.map(e=&gt;e.equipment))].sort((a,b)=&gt;a.localeCompare(b,undefined,{numeric:true}));
+  equipmentSelect.innerHTML=&#x27;&lt;option value=&quot;all&quot;&gt;ทุก Equipment&lt;/option&gt;&#x27;+equipments.map(eq=&gt;`&lt;option value=&quot;${eq}&quot;&gt;${eq}&lt;/option&gt;`).join(&#x27;&#x27;);
+  positionSelect.innerHTML=&#x27;&lt;option value=&quot;all&quot;&gt;ทุกตำแหน่ง&lt;/option&gt;&#x27;+[1,2,3,4].map(p=&gt;`&lt;option value=&quot;${p}&quot;&gt;MD-${p}&lt;/option&gt;`).join(&#x27;&#x27;);
+  equipmentSelect.value=&#x27;all&#x27;;
+  const renderMonth=()=&gt;{
+    root.querySelector(&#x27;#month-selected-panel&#x27;).hidden=true;
+    const month=Number(monthSelect.value), list=events.filter(e=&gt;e.month===month);
+    const groups=[...new Set(list.map(e=&gt;e.equipment))].sort((a,b)=&gt;a.localeCompare(b,undefined,{numeric:true}));
+    const total=list.reduce((s,e)=&gt;s+e.count,0);
+    const donut=root.querySelector(&#x27;#month-donut&#x27;),legend=root.querySelector(&#x27;#month-donut-legend&#x27;);
+    if(!total){donut.textContent=&#x27;ยังไม่มีข้อมูลสำหรับกราฟเดือนนี้&#x27;;legend.innerHTML=&#x27;&#x27;;}
+    else {
+      const shares=groups.map(eq=&gt;({eq,count:list.filter(e=&gt;e.equipment===eq).reduce((s,e)=&gt;s+e.count,0),color:`var(--viz-series-${equipments.indexOf(eq)%6+1})`}));
+      const w=Math.min(280,donut.clientWidth||280),c=w/2,r=w*.46,inner=w*.29;
+      const point=(radius,a)=&gt;[c+radius*Math.cos(a),c+radius*Math.sin(a)];
+      let angle=-Math.PI/2;
+      const paths=shares.map(d=&gt;{const end=angle+d.count/total*Math.PI*2,large=end-angle&gt;Math.PI?1:0,p1=point(r,angle),p2=point(r,end),p3=point(inner,end),p4=point(inner,angle);const path=`M ${p1} A ${r} ${r} 0 ${large} 1 ${p2} L ${p3} A ${inner} ${inner} 0 ${large} 0 ${p4} Z`;angle=end;return `&lt;path class=&quot;cursor-interaction&quot; data-history-eq=&quot;${d.eq}&quot; data-count=&quot;${d.count}&quot; data-tooltip=&quot;${d.eq}: ${d.count} ก้อน (${(d.count/total*100).toFixed(1)}%) — กดเพื่อดูประวัติ&quot; d=&quot;${path}&quot; fill=&quot;${d.color}&quot;&gt;&lt;title&gt;${d.eq}: ${d.count} ก้อน&lt;/title&gt;&lt;/path&gt;`;}).join(&#x27;&#x27;);
+      donut.innerHTML=`&lt;svg class=&quot;donut-svg&quot; viewBox=&quot;0 0 ${w} ${w}&quot; role=&quot;img&quot; aria-label=&quot;${monthNames[month]} รวม ${total} ก้อน; ${shares.map(d=&gt;`${d.eq} ${d.count} ก้อน`).join(&#x27;; &#x27;)}&quot;&gt;&lt;title&gt;สัดส่วนการเปลี่ยนแปรงถ่าน ${monthNames[month]} 2026&lt;/title&gt;${paths}&lt;text x=&quot;${c}&quot; y=&quot;${c-10}&quot; text-anchor=&quot;middle&quot;&gt;${monthNames[month]}&lt;/text&gt;&lt;text x=&quot;${c}&quot; y=&quot;${c+16}&quot; text-anchor=&quot;middle&quot;&gt;${total} ก้อน&lt;/text&gt;&lt;/svg&gt;`;
+      legend.innerHTML=shares.map(d=&gt;`&lt;button class=&quot;btn btn-ghost&quot; type=&quot;button&quot; data-history-eq=&quot;${d.eq}&quot; aria-label=&quot;ดูประวัติ ${d.eq} เดือนนี้ ${d.count} ก้อน ${(d.count/total*100).toFixed(1)} เปอร์เซ็นต์&quot;&gt;&lt;span class=&quot;swatch&quot; style=&quot;background:${d.color}&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;${d.eq} · ${d.count} ก้อน · ${(d.count/total*100).toFixed(1)}%&lt;/button&gt;`).join(&#x27;&#x27;);
+    }
+    root.querySelector(&#x27;#month-summary&#x27;).textContent=month&gt;=rows.length?`${monthNames[month]} 2026: ยังไม่มี PDF จึงไม่สามารถสรุปยอดเปลี่ยนได้`:`${monthNames[month]} 2026 · เปลี่ยน ${list.reduce((s,e)=&gt;s+e.count,0)} ก้อน · ${groups.length} Equipment · C40Z3 ${list.filter(e=&gt;e.type===A).reduce((s,e)=&gt;s+e.count,0)} / CM3H ${list.filter(e=&gt;e.type===B).reduce((s,e)=&gt;s+e.count,0)} ก้อน`;
+    root.querySelector(&#x27;#month-equipment-rows&#x27;).innerHTML=groups.length?groups.map(eq=&gt;{const subset=list.filter(e=&gt;e.equipment===eq),parts=new Map();subset.forEach(e=&gt;{const k=`MD-${e.position} ${e.type}`;parts.set(k,(parts.get(k)||0)+e.count);});return `&lt;tr&gt;&lt;th&gt;${eq}&lt;/th&gt;&lt;td&gt;${[...parts].map(([k,n])=&gt;`${k}: ${n} ก้อน`).join(&#x27;&lt;br&gt;&#x27;)}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${subset.reduce((s,e)=&gt;s+e.count,0)}&lt;/td&gt;&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;btn&quot; data-history-eq=&quot;${eq}&quot;&gt;ดูประวัติ&lt;/button&gt;&lt;/td&gt;&lt;/tr&gt;`;}).join(&#x27;&#x27;):&#x27;&lt;tr&gt;&lt;td colspan=&quot;4&quot;&gt;ยังไม่มีข้อมูลเดือนนี้ — ไม่ใช่ยอดเปลี่ยน 0 ก้อน&lt;/td&gt;&lt;/tr&gt;&#x27;;
+  };
+  root.querySelector(&#x27;#month-equipment-rows&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const button=e.target.closest(&#x27;[data-history-eq]&#x27;);if(!button)return;equipmentSelect.value=button.dataset.historyEq;positionSelect.value=&#x27;all&#x27;;renderHistory();saveState();root.querySelector(&#x27;#history-title&#x27;).scrollIntoView({block:&#x27;start&#x27;});});
+  root.querySelector(&#x27;#month-donut-layout&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const target=e.target.closest(&#x27;[data-history-eq]&#x27;);if(!target)return;const eq=target.dataset.historyEq;root.querySelectorAll(&#x27;#month-equipment-rows tr&#x27;).forEach(tr=&gt;{tr.hidden=tr.querySelector(&#x27;th&#x27;)?.textContent!==eq;});root.querySelector(&#x27;#month-selected-title&#x27;).textContent=`${eq} · ${monthNames[Number(monthSelect.value)]} 2026`;root.querySelector(&#x27;#month-selected-panel&#x27;).hidden=false;});
+  root.querySelector(&#x27;#month-selected-close&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{root.querySelector(&#x27;#month-selected-panel&#x27;).hidden=true;});
+  const formatDate=date=&gt;{if(!date)return &#x27;ยังจับคู่วันที่ไม่ได้&#x27;;const [y,m,d]=date.split(&#x27;-&#x27;);const months=[&#x27;ม.ค.&#x27;,&#x27;ก.พ.&#x27;,&#x27;มี.ค.&#x27;,&#x27;เม.ย.&#x27;,&#x27;พ.ค.&#x27;,&#x27;มิ.ย.&#x27;,&#x27;ก.ค.&#x27;,&#x27;ส.ค.&#x27;,&#x27;ก.ย.&#x27;,&#x27;ต.ค.&#x27;,&#x27;พ.ย.&#x27;,&#x27;ธ.ค.&#x27;];return `${Number(d)} ${months[Number(m)-1]} ${y}`;};
+  const detailMonth=root.querySelector(&#x27;#history-detail-month&#x27;);
+  detailMonth.innerHTML=monthNames.map((name,i)=&gt;`&lt;option value=&quot;${i}&quot;&gt;${name} 2026${i&gt;=rows.length?&#x27; — ยังไม่มีรายงาน&#x27;:&#x27;&#x27;}&lt;/option&gt;`).join(&#x27;&#x27;);
+  detailMonth.value=&#x27;6&#x27;;
+  const showMonthDetail=()=&gt;{root.querySelectorAll(&#x27;[data-history-month]&#x27;).forEach(el=&gt;{el.hidden=el.dataset.historyMonth!==detailMonth.value;el.open=!el.hidden;});};
+  detailMonth.addEventListener(&#x27;change&#x27;,showMonthDetail);
+  const drawHistoryLine=()=&gt;{
+    const host=root.querySelector(&#x27;#history-line&#x27;),w=host.clientWidth;if(!w)return;
+    const values=rows.map((r,i)=&gt;events.filter(e=&gt;e.month===i&amp;&amp;(equipmentSelect.value===&#x27;all&#x27;||e.equipment===equipmentSelect.value)&amp;&amp;(positionSelect.value===&#x27;all&#x27;||e.position===Number(positionSelect.value))).reduce((s,e)=&gt;s+e.count,0));
+    const left=64,right=w-24,top=28,bottom=214,ceiling=Math.max(1,Math.ceil(Math.max(...values)*1.25));
+    const x=i=&gt;left+12+i*(right-left-24)/(values.length-1),y=n=&gt;bottom-12-n/ceiling*(bottom-top-32);
+    const ticks=[...new Set([0,Math.round(ceiling/2),ceiling])];
+    host.innerHTML=`&lt;svg class=&quot;history-line-svg&quot; viewBox=&quot;0 0 ${w} 274&quot; role=&quot;img&quot; aria-label=&quot;ยอดเปลี่ยนรายเดือน ${values.map((n,i)=&gt;`${rows[i].m} ${n} ก้อน`).join(&#x27;, &#x27;)}&quot;&gt;&lt;title&gt;จำนวนแปรงถ่านที่เปลี่ยนรายเดือน&lt;/title&gt;&lt;rect data-chart-frame x=&quot;${left}&quot; y=&quot;${top}&quot; width=&quot;${right-left}&quot; height=&quot;${bottom-top}&quot; fill=&quot;none&quot; stroke=&quot;var(--border)&quot;/&gt;${ticks.map(n=&gt;`&lt;line x1=&quot;${left}&quot; x2=&quot;${right}&quot; y1=&quot;${y(n)}&quot; y2=&quot;${y(n)}&quot; stroke=&quot;var(--border)&quot;/&gt;&lt;text x=&quot;${left-10}&quot; y=&quot;${y(n)+4}&quot; text-anchor=&quot;end&quot;&gt;${n}&lt;/text&gt;`).join(&#x27;&#x27;)}&lt;text class=&quot;axis-title&quot; data-axis=&quot;y&quot; x=&quot;${left}&quot; y=&quot;16&quot;&gt;จำนวน (ก้อน)&lt;/text&gt;&lt;text class=&quot;axis-title&quot; data-axis=&quot;x&quot; x=&quot;${(left+right)/2}&quot; y=&quot;265&quot; text-anchor=&quot;middle&quot;&gt;เดือนรายงาน 2026&lt;/text&gt;&lt;path d=&quot;${values.map((n,i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;} ${x(i)} ${y(n)}`).join(&#x27; &#x27;)}&quot; fill=&quot;none&quot; stroke=&quot;var(--viz-series-1)&quot; stroke-width=&quot;2&quot;/&gt;${values.map((n,i)=&gt;`&lt;circle cx=&quot;${x(i)}&quot; cy=&quot;${y(n)}&quot; r=&quot;5&quot; fill=&quot;var(--viz-series-1)&quot;/&gt;&lt;text x=&quot;${x(i)}&quot; y=&quot;${y(n)-12}&quot; text-anchor=&quot;middle&quot;&gt;${n}&lt;/text&gt;${w&gt;=500||i%2===0?`&lt;text x=&quot;${x(i)}&quot; y=&quot;235&quot; text-anchor=&quot;middle&quot;&gt;${rows[i].m}&lt;/text&gt;`:&#x27;&#x27;}&lt;circle class=&quot;cursor-interaction&quot; data-line-month=&quot;${i}&quot; data-value=&quot;${n}&quot; data-chart-hit cx=&quot;${x(i)}&quot; cy=&quot;${y(n)}&quot; r=&quot;16&quot; fill=&quot;transparent&quot; data-tooltip=&quot;${rows[i].name}: ${n} ก้อน · กดดูรายละเอียด&quot;/&gt;`).join(&#x27;&#x27;)}&lt;/svg&gt;`;
+  };
+  root.querySelector(&#x27;#history-line&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{const hit=e.target.closest(&#x27;[data-line-month]&#x27;);if(hit){detailMonth.value=hit.dataset.lineMonth;showMonthDetail();}});
+  const renderHistory=()=&gt;{
+    const end=rows.length-1;
+    const selected=events.filter(e=&gt;e.month&lt;=end&amp;&amp;(equipmentSelect.value===&#x27;all&#x27;||e.equipment===equipmentSelect.value)&amp;&amp;(positionSelect.value===&#x27;all&#x27;||e.position===Number(positionSelect.value)));
+    const sum=type=&gt;selected.filter(e=&gt;!type||e.type===type).reduce((s,e)=&gt;s+e.count,0);
+    const latest=selected.length?Math.max(...selected.map(e=&gt;e.month)):null;
+    root.querySelector(&#x27;#history-summary&#x27;).textContent=selected.length?`${equipmentSelect.value===&#x27;all&#x27;?&#x27;ทุก Equipment&#x27;:equipmentSelect.value} · ${positionSelect.value===&#x27;all&#x27;?&#x27;ทุกตำแหน่ง&#x27;:&#x27;MD-&#x27;+positionSelect.value} | รวม ${sum()} ก้อน · C40Z3 ${sum(A)} · CM3H ${sum(B)} | มีบันทึกใน ${new Set(selected.map(e=&gt;e.month)).size} เดือน · รายงานล่าสุด ${rows[latest].name} 2026`:&#x27;ไม่พบบันทึกการเปลี่ยนในชุดรายงาน ม.ค.–ก.ค. 2026 สำหรับ Equipment / ตำแหน่งนี้&#x27;;
+    root.querySelector(&#x27;#history-summary&#x27;).textContent+=` | ยอดสะสมมกราคม–${monthNames[end]} 2026`;
+    root.querySelector(&#x27;#history-month-breakdown&#x27;).innerHTML=monthNames.map((name,i)=&gt;{
+      const list=selected.filter(e=&gt;e.month===i),total=list.reduce((s,e)=&gt;s+e.count,0);
+      if(i&gt;=rows.length)return `&lt;details data-history-month=&quot;${i}&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;${name} 2026 · ยังไม่มีรายงาน&lt;/summary&gt;&lt;p&gt;ยังสรุปจำนวนที่เปลี่ยนไม่ได้ ไม่ถือว่าเป็น 0 ก้อน&lt;/p&gt;&lt;/details&gt;`;
+      const a=list.filter(e=&gt;e.type===A).reduce((s,e)=&gt;s+e.count,0),b=list.filter(e=&gt;e.type===B).reduce((s,e)=&gt;s+e.count,0);
+      return `&lt;details data-history-month=&quot;${i}&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;${name} 2026 · ${total} ก้อน${total?` · C40Z3 ${a} / CM3H ${b}`:&#x27; · ไม่พบบันทึกเปลี่ยน&#x27;}&lt;/summary&gt;${list.length?`&lt;ul&gt;${list.map(e=&gt;`&lt;li&gt;${e.equipment} MD-${e.position} · ${e.type} · ${e.count} ก้อน&lt;br&gt;วันที่บันทึก: ${formatDate(e.date)} (ไม่ใช่วันเปลี่ยนที่ยืนยัน)${e.note?`&lt;br&gt;${e.note}`:&#x27;&#x27;}&lt;/li&gt;`).join(&#x27;&#x27;)}&lt;/ul&gt;`:&#x27;&lt;p&gt;ไม่พบบันทึกการเปลี่ยนของ Equipment / ตำแหน่งที่เลือกในรายงานเดือนนี้&lt;/p&gt;&#x27;}&lt;div class=&quot;text-small&quot;&gt;แหล่งข้อมูล: ${rows[i].file} · หน้า 1&lt;/div&gt;&lt;/details&gt;`;
+    }).join(&#x27;&#x27;);
+    showMonthDetail();drawHistoryLine();
+    let cumulativeA=0,cumulativeB=0;
+    const trend=monthNames.slice(0,end+1).map((name,i)=&gt;{const list=selected.filter(e=&gt;e.month===i),a=list.filter(e=&gt;e.type===A).reduce((s,e)=&gt;s+e.count,0),b=list.filter(e=&gt;e.type===B).reduce((s,e)=&gt;s+e.count,0);cumulativeA+=a;cumulativeB+=b;return {name,i,a,b,total:a+b,cumulative:cumulativeA+cumulativeB,ca:cumulativeA,cb:cumulativeB,available:i&lt;rows.length};});
+    const maxMonthly=Math.max(1,...trend.map(d=&gt;d.total)),maxCumulative=Math.max(1,...trend.map(d=&gt;d.cumulative));
+    root.querySelector(&#x27;#trend-scope&#x27;).textContent=`${equipmentSelect.value===&#x27;all&#x27;?&#x27;ทุก Equipment&#x27;:equipmentSelect.value} / ${positionSelect.value===&#x27;all&#x27;?&#x27;ทุกตำแหน่ง&#x27;:&#x27;MD-&#x27;+positionSelect.value} · ม.ค.–${monthNames[end]} 2026 · แถบรายเดือนและแถบสะสมใช้สเกลแยกกัน`;
+    const trendRoot=root.querySelector(&#x27;#equipment-trend&#x27;);
+    trendRoot.setAttribute(&#x27;aria-label&#x27;,trend.map(d=&gt;`${d.name}: ${d.available?`${d.total} ก้อน สะสม ${d.cumulative} ก้อน`:&#x27;ไม่มีรายงาน&#x27;}`).join(&#x27;; &#x27;));
+    trendRoot.innerHTML=&#x27;&lt;div class=&quot;trend-row text-small&quot;&gt;&lt;span&gt;เดือน&lt;/span&gt;&lt;span&gt;รายเดือน&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;สะสม&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&#x27;+trend.map(d=&gt;d.available?`&lt;div class=&quot;trend-row&quot; data-trend-month=&quot;${d.i}&quot; data-total=&quot;${d.total}&quot; data-cumulative=&quot;${d.cumulative}&quot;&gt;&lt;span&gt;${rows[d.i].m}&lt;/span&gt;&lt;div class=&quot;bar-track&quot; data-tooltip=&quot;${d.name}: C40Z3 ${d.a}, CM3H ${d.b} ก้อน&quot;&gt;&lt;div class=&quot;bar-segment s1&quot; style=&quot;width:${d.a/maxMonthly*100}%&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar-segment s2&quot; style=&quot;width:${d.b/maxMonthly*100}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;text-end tabular-nums&quot;&gt;${d.total}&lt;/span&gt;&lt;div class=&quot;bar-track&quot; data-tooltip=&quot;สะสม: C40Z3 ${d.ca}, CM3H ${d.cb} ก้อน&quot;&gt;&lt;div class=&quot;bar-segment s1&quot; style=&quot;width:${d.ca/maxCumulative*100}%&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar-segment s2&quot; style=&quot;width:${d.cb/maxCumulative*100}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;text-end tabular-nums&quot;&gt;${d.cumulative}&lt;/span&gt;&lt;/div&gt;`:`&lt;div class=&quot;viz-row text-small&quot;&gt;${d.name}: ยังไม่มี PDF · ยอดสะสมถึงเดือนนี้ยังไม่ครบ&lt;/div&gt;`).join(&#x27;&#x27;);
+    root.querySelector(&#x27;#history-rows&#x27;).innerHTML=selected.length?[...selected].sort((a,b)=&gt;b.month-a.month).map(e=&gt;`&lt;tr&gt;&lt;td&gt;${rows[e.month].m} 2026&lt;details&gt;&lt;summary class=&quot;cursor-interaction text-small&quot;&gt;แหล่งข้อมูล&lt;/summary&gt;&lt;span class=&quot;text-small&quot;&gt;${rows[e.month].file} · หน้า 1 · ตารางรายการสรุปที่ได้เปลี่ยน&lt;/span&gt;&lt;/details&gt;&lt;/td&gt;&lt;td&gt;${e.equipment} MD-${e.position}&lt;/td&gt;&lt;td&gt;${e.type}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${e.count}&lt;/td&gt;&lt;td&gt;${formatDate(e.date)}&lt;/td&gt;&lt;td&gt;${e.note||&#x27;วันที่อ้างอิงจากตารางหลัก; ไม่ยืนยันวันเปลี่ยน&#x27;}&lt;/td&gt;&lt;/tr&gt;`).join(&#x27;&#x27;):&#x27;&lt;tr&gt;&lt;td colspan=&quot;6&quot;&gt;ไม่พบบันทึก ไม่ใช่ยืนยันว่าไม่เคยเปลี่ยน&lt;/td&gt;&lt;/tr&gt;&#x27;;
+  };
+  const saveState=()=&gt;{const opened=[...root.querySelectorAll(&#x27;[data-month]&#x27;)].filter(d=&gt;d.open).map(d=&gt;Number(d.dataset.month));window.openai?.setWidgetState?.({modelContent:{reportMonth:monthNames[Number(monthSelect.value)],equipment:equipmentSelect.value,position:positionSelect.value,monthsOpened:opened.map(i=&gt;rows[i].name)},privateContent:{reportMonth:monthSelect.value,opened,equipment:equipmentSelect.value,position:positionSelect.value}})?.catch(()=&gt;{});};
+  monthSelect.addEventListener(&#x27;change&#x27;,()=&gt;{renderMonth();renderHistory();saveState();});
+  [equipmentSelect,positionSelect].forEach(el=&gt;el.addEventListener(&#x27;change&#x27;,()=&gt;{renderHistory();saveState();}));
+  const restore = state =&gt; { const saved=state?.privateContent; const opened=saved?.opened; if (Array.isArray(opened)) root.querySelectorAll(&#x27;[data-month]&#x27;).forEach(el =&gt; {el.open = opened.includes(Number(el.dataset.month));}); if(saved&amp;&amp;(saved.equipment===&#x27;all&#x27;||equipments.includes(saved.equipment)))equipmentSelect.value=saved.equipment;if(saved&amp;&amp;[&#x27;all&#x27;,&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;].includes(saved.position))positionSelect.value=saved.position;if(saved&amp;&amp;/^[0-8]$/.test(saved.reportMonth))monthSelect.value=saved.reportMonth;renderMonth();renderHistory(); };
+  restore(window.openai?.widgetState);
+  new ResizeObserver(drawHistoryLine).observe(root.querySelector(&#x27;#history-line&#x27;));
+  let localInteraction=false;
+  root.addEventListener(&#x27;change&#x27;,()=&gt;{localInteraction=true;},true);
+  root.addEventListener(&#x27;click&#x27;,()=&gt;{localInteraction=true;},true);
+  window.addEventListener(&#x27;openai:set_globals&#x27;, e =&gt; {if(!localInteraction)restore(e.detail?.globals?.widgetState);});
+  root.querySelectorAll(&#x27;[data-month]&#x27;).forEach(el =&gt; el.addEventListener(&#x27;toggle&#x27;, e =&gt; {if(e.isTrusted)saveState();}));
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+<script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  let viewportHeight = globalThis.innerHeight;
+  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
+    globalThis.location.pathname,
+    globalThis.location.search,
+  ])}`;
+  const parseState = (serializedState) => {
+    if (
+      typeof serializedState !== "string" ||
+      new TextEncoder().encode(serializedState).length > 16 * 1024
+    ) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    /** @type {unknown} */
+    const state = JSON.parse(serializedState);
+    if (
+      state == null ||
+      typeof state !== "object" ||
+      Array.isArray(state) ||
+      ("imageIds" in state &&
+        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
+    ) {
+      throw new TypeError("Widget state must be a JSON object");
+    }
+    const storedState = { modelContent: null, privateContent: null, ...state };
+    const canonicalState = JSON.stringify(
+      storedState,
+      (_key, /** @type {unknown} */ value) => {
+        if (typeof value === "number" && !Number.isFinite(value)) {
+          throw new TypeError("Widget state must contain finite numbers");
+        }
+        return value;
+      },
+    );
+    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    return storedState;
+  };
+  let storage = null;
+  let state = null;
+  try {
+    const localStorage = globalThis.localStorage;
+    const probeKey = `${storageKey}:probe`;
+    localStorage.setItem(probeKey, "1");
+    localStorage.removeItem(probeKey);
+    storage = localStorage;
+    const savedState = storage.getItem(storageKey);
+    if (savedState != null) {
+      try {
+        state = parseState(savedState);
+      } catch {
+        // Invalid saved state does not disable future writes.
+      }
+    }
+  } catch {
+    storage = null;
+  }
+  const initialGlobals = {
+    widgetState: state,
+    statePersistence: storage == null ? "none" : "local",
+  };
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "widget-state-write") {
+      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
+        return;
+      }
+      let ok = false;
+      try {
+        if (storage != null) {
+          const state = parseState(data.state);
+          storage.setItem(storageKey, JSON.stringify(state));
+          ok = true;
+        }
+      } catch {
+        // Storage denial, quota limits, and invalid state return a failed receipt.
+      }
+      channel.port1.postMessage({
+        type: "widget-state-result",
+        id: data.id,
+        ok,
+      });
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height === "number" &&
+        Number.isFinite(height) &&
+        height >= 0 &&
+        height <= 10_000
+      ) {
+        frame.style.height = Math.ceil(height) + "px";
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!Number.isFinite(height) || height <= viewportHeight) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  // Match the trusted bootstrap element, not the same text in an authored title.
+  frame.srcdoc = srcdoc.replace(
+    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
+    () =>
+      '<script type="application/json" id="codex-visualization-widget-state">' +
+      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
+      "<\/script>",
+  );
+  delete frame.dataset.srcdoc;
+})();
+</script>
+</body>
+</html>
