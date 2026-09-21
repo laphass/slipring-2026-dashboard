@@ -1337,7 +1337,7 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;h3 id=&quot;month-title&quot;&gt;1. สรุปรายการเปลี่ยนในเดือนที่เลือก&lt;/h3&gt;
   &lt;label class=&quot;form-label&quot; for=&quot;report-month&quot;&gt;เดือนสำหรับสรุปและกราฟโดนัท&lt;select class=&quot;form-select&quot; id=&quot;report-month&quot;&gt;&lt;/select&gt;&lt;/label&gt;
   &lt;p class=&quot;text-small&quot;&gt;ปี 2026 · มี PDF ถึงกรกฎาคม · สิงหาคม–กันยายนยังไม่มีรายงาน · ยอดรวมด้านบนเป็นยอดทั้งชุดข้อมูล&lt;/p&gt;
-  &lt;div class=&quot;monthly-comparison&quot;&gt;&lt;div&gt;&lt;h3&gt;เปลี่ยนในเดือนที่เลือก&lt;/h3&gt;&lt;div id=&quot;selected-month-columns&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;h3&gt;ยอดสะสมถึงเดือนที่เลือก&lt;/h3&gt;&lt;div id=&quot;selected-cumulative-columns&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;monthly-comparison&quot;&gt;&lt;div&gt;&lt;h3&gt;ยอดสะสมถึงเดือนที่เลือก&lt;/h3&gt;&lt;div id=&quot;selected-cumulative-columns&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div id=&quot;month-summary&quot; class=&quot;card&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
   &lt;h3 class=&quot;center-heading&quot;&gt;สัดส่วนการเปลี่ยนแปรงถ่าน · Equipment&lt;/h3&gt;
   &lt;div id=&quot;month-explore-layout&quot;&gt;
@@ -1453,7 +1453,7 @@ html,body{background:#f2f2f2!important;color:#565656!important;font-family:&quot
 #slipring-2026 select{font:inherit;color:#159fc1;background:#fff;border:1px solid #ddd;border-radius:9px;padding:10px 14px;width:100%;height:auto}
 #slipring-2026 #report-month{font-size:25px;text-align:center;border:0;background:transparent;font-weight:500}
 #slipring-2026 label[for=&quot;report-month&quot;]+p{text-align:center;color:#777}
-#slipring-2026 .monthly-comparison{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin:38px 0}
+#slipring-2026 .monthly-comparison{display:grid;grid-template-columns:1fr;gap:42px;margin:38px 0}
 #slipring-2026 .monthly-comparison h3{text-align:center;font-size:21px}
 #slipring-2026 .column-chart{display:flex;gap:8px;align-items:flex-end;border-bottom:2px solid #ddd;height:218px;padding:16px 0 0}
 #slipring-2026 .column-item{flex:1;min-width:0;border:0;background:none;color:#555;font:600 12px &quot;Segoe UI&quot;,sans-serif;padding:0;cursor:pointer}
@@ -1552,7 +1552,7 @@ html,body{background:#f2f2f2!important;color:#565656!important;font-family:&quot
 
       root.querySelector(host).innerHTML=`&lt;div class=&quot;column-chart&quot; aria-label=&quot;${cumulative?&#x27;ยอดสะสม&#x27;:&#x27;ยอดรายเดือน&#x27;} หน่วยก้อน&quot;&gt;${vals.map((d,i)=&gt;`&lt;button type=&quot;button&quot; class=&quot;column-item&quot; data-column-eq=&quot;${d.eq}&quot; aria-label=&quot;${d.eq} ${d.n} ก้อน ดูประวัติ&quot;&gt;&lt;span class=&quot;column-plot&quot;&gt;&lt;span class=&quot;column-bar&quot; style=&quot;height:${d.n/max*155}px;background:${[&#x27;#5b5b5b&#x27;,&#x27;#d6ce08&#x27;,&#x27;#12a4ca&#x27;,&#x27;#d50c8b&#x27;][i%4]}&quot;&gt;&lt;span class=&quot;column-value&quot;&gt;${d.n}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span&gt;${d.eq}&lt;/span&gt;&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;&lt;p class=&quot;chart-caption&quot;&gt;${monthNames[month]} 2026 · จำนวน (ก้อน)&lt;/p&gt;`;
     };
-    columns(&#x27;#selected-month-columns&#x27;,false);columns(&#x27;#selected-cumulative-columns&#x27;,true);
+    columns(&#x27;#selected-cumulative-columns&#x27;,true);
 
     const donut=root.querySelector(&#x27;#month-donut&#x27;),legend=root.querySelector(&#x27;#month-donut-legend&#x27;);
     if(!total){donut.textContent=&#x27;ยังไม่มีข้อมูลสำหรับกราฟเดือนนี้&#x27;;legend.innerHTML=&#x27;&#x27;;}
