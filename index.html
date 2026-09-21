@@ -1361,10 +1361,11 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;label class=&quot;form-label&quot; for=&quot;history-detail-month&quot;&gt;เลือกเดือนหรือกดจุดบนกราฟเพื่อดูรายละเอียด&lt;select id=&quot;history-detail-month&quot; class=&quot;form-select&quot;&gt;&lt;/select&gt;&lt;/label&gt;
   &lt;div class=&quot;text-small&quot;&gt;สิงหาคม–กันยายนยังไม่มีรายงาน จึงไม่แสดงเป็นจุดศูนย์บนกราฟ&lt;/div&gt;
   &lt;div id=&quot;history-month-breakdown&quot;&gt;&lt;/div&gt;
-  &lt;h3&gt;3. แนวโน้มยอดเปลี่ยนและยอดสะสม (ก้อน)&lt;/h3&gt;
+  &lt;h3&gt;3. ยอดเปลี่ยนแปรงถ่านสะสมแยกตาม Equipment (ก้อน)&lt;/h3&gt;
   &lt;div id=&quot;trend-scope&quot; class=&quot;text-small&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;viz-row text-small&quot;&gt;&lt;span&gt;&lt;span class=&quot;swatch s1&quot;&gt;&lt;/span&gt;C40Z3&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;swatch s2&quot;&gt;&lt;/span&gt;CM3H&lt;/span&gt;&lt;span&gt;0 = ไม่พบบันทึกเปลี่ยนในรายงานเดือนนั้น&lt;/span&gt;&lt;/div&gt;
-  &lt;div id=&quot;equipment-trend&quot; role=&quot;img&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;text-small&quot;&gt;แนวนอน: เดือน · แนวตั้ง: Equipment · ตัวเลขคือยอดสะสมตั้งแต่มกราคม · สีเข้มขึ้นเมื่อยอดสะสมมากขึ้น · กดตัวเลขเพื่อดูรายละเอียด&lt;/div&gt;
+  &lt;div id=&quot;equipment-trend&quot; class=&quot;table-responsive&quot;&gt;&lt;/div&gt;
+  &lt;div id=&quot;equipment-cell-detail&quot; hidden aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
   &lt;details id=&quot;trend-details&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;ดูรายละเอียดข้อมูลและประวัติการเปลี่ยน&lt;/summary&gt;
   &lt;div class=&quot;text-small&quot;&gt;ยอดสะสม = ผลรวมรายการตั้งแต่มกราคมถึงเดือนนั้น · เดือนที่ไม่มี PDF ไม่แสดงเป็น 0&lt;/div&gt;
   &lt;p class=&quot;text-small&quot;&gt;ยอดสะสมจากรายงาน ม.ค.–ก.ค. 2026 ตามชื่อ Equipment / ตำแหน่ง ไม่ใช่ประวัติตลอดอายุของมอเตอร์ · วันที่เปลี่ยนจริงไม่ได้ระบุใน PDF; วันที่ด้านล่างเป็น Reported Date ในตารางหลักเท่านั้น&lt;/p&gt;
@@ -1401,6 +1402,12 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/details&gt;
 &lt;/div&gt;
 &lt;style&gt;
+#slipring-2026 .equipment-matrix{min-width:850px}
+#slipring-2026 .equipment-matrix th{text-align:center;white-space:nowrap}
+#slipring-2026 .equipment-matrix tbody th{text-align:left}
+#slipring-2026 .matrix-cell{display:block;width:100%;min-height:44px;border:0;border-radius:4px;color:var(--foreground);background:color-mix(in srgb,var(--viz-series-1) var(--cell-strength),var(--background));font:inherit}
+#slipring-2026 .matrix-cell:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+
 #slipring-2026 .swatch{display:inline-block;width:12px;height:12px;margin-right:6px}
 #slipring-2026 .s1{background:var(--viz-series-1)}
 #slipring-2026 .s2{background:var(--viz-series-2)}
@@ -1517,15 +1524,24 @@ html&gt;body{padding:0}&lt;/style&gt;
       return `&lt;details data-history-month=&quot;${i}&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;${name} 2026 · ${total} ก้อน${total?` · C40Z3 ${a} / CM3H ${b}`:&#x27; · ไม่พบบันทึกเปลี่ยน&#x27;}&lt;/summary&gt;${list.length?`&lt;ul&gt;${list.map(e=&gt;`&lt;li&gt;${e.equipment} MD-${e.position} · ${e.type} · ${e.count} ก้อน&lt;br&gt;วันที่บันทึก: ${formatDate(e.date)} (ไม่ใช่วันเปลี่ยนที่ยืนยัน)${e.note?`&lt;br&gt;${e.note}`:&#x27;&#x27;}&lt;/li&gt;`).join(&#x27;&#x27;)}&lt;/ul&gt;`:&#x27;&lt;p&gt;ไม่พบบันทึกการเปลี่ยนของ Equipment / ตำแหน่งที่เลือกในรายงานเดือนนี้&lt;/p&gt;&#x27;}&lt;div class=&quot;text-small&quot;&gt;แหล่งข้อมูล: ${rows[i].file} · หน้า 1&lt;/div&gt;&lt;/details&gt;`;
     }).join(&#x27;&#x27;);
     showMonthDetail();drawHistoryLine();
-    let cumulativeA=0,cumulativeB=0;
-    const trend=monthNames.slice(0,end+1).map((name,i)=&gt;{const list=selected.filter(e=&gt;e.month===i),a=list.filter(e=&gt;e.type===A).reduce((s,e)=&gt;s+e.count,0),b=list.filter(e=&gt;e.type===B).reduce((s,e)=&gt;s+e.count,0);cumulativeA+=a;cumulativeB+=b;return {name,i,a,b,total:a+b,cumulative:cumulativeA+cumulativeB,ca:cumulativeA,cb:cumulativeB,available:i&lt;rows.length};});
-    const maxMonthly=Math.max(1,...trend.map(d=&gt;d.total)),maxCumulative=Math.max(1,...trend.map(d=&gt;d.cumulative));
-    root.querySelector(&#x27;#trend-scope&#x27;).textContent=`${equipmentSelect.value===&#x27;all&#x27;?&#x27;ทุก Equipment&#x27;:equipmentSelect.value} / ${positionSelect.value===&#x27;all&#x27;?&#x27;ทุกตำแหน่ง&#x27;:&#x27;MD-&#x27;+positionSelect.value} · ม.ค.–${monthNames[end]} 2026 · แถบรายเดือนและแถบสะสมใช้สเกลแยกกัน`;
-    const trendRoot=root.querySelector(&#x27;#equipment-trend&#x27;);
-    trendRoot.setAttribute(&#x27;aria-label&#x27;,trend.map(d=&gt;`${d.name}: ${d.available?`${d.total} ก้อน สะสม ${d.cumulative} ก้อน`:&#x27;ไม่มีรายงาน&#x27;}`).join(&#x27;; &#x27;));
-    trendRoot.innerHTML=&#x27;&lt;div class=&quot;trend-row text-small&quot;&gt;&lt;span&gt;เดือน&lt;/span&gt;&lt;span&gt;รายเดือน&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;สะสม&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&#x27;+trend.map(d=&gt;d.available?`&lt;div class=&quot;trend-row&quot; data-trend-month=&quot;${d.i}&quot; data-total=&quot;${d.total}&quot; data-cumulative=&quot;${d.cumulative}&quot;&gt;&lt;span&gt;${rows[d.i].m}&lt;/span&gt;&lt;div class=&quot;bar-track&quot; data-tooltip=&quot;${d.name}: C40Z3 ${d.a}, CM3H ${d.b} ก้อน&quot;&gt;&lt;div class=&quot;bar-segment s1&quot; style=&quot;width:${d.a/maxMonthly*100}%&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar-segment s2&quot; style=&quot;width:${d.b/maxMonthly*100}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;text-end tabular-nums&quot;&gt;${d.total}&lt;/span&gt;&lt;div class=&quot;bar-track&quot; data-tooltip=&quot;สะสม: C40Z3 ${d.ca}, CM3H ${d.cb} ก้อน&quot;&gt;&lt;div class=&quot;bar-segment s1&quot; style=&quot;width:${d.ca/maxCumulative*100}%&quot;&gt;&lt;/div&gt;&lt;div class=&quot;bar-segment s2&quot; style=&quot;width:${d.cb/maxCumulative*100}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;text-end tabular-nums&quot;&gt;${d.cumulative}&lt;/span&gt;&lt;/div&gt;`:`&lt;div class=&quot;viz-row text-small&quot;&gt;${d.name}: ยังไม่มี PDF · ยอดสะสมถึงเดือนนี้ยังไม่ครบ&lt;/div&gt;`).join(&#x27;&#x27;);
+    const matrixEvents=events.filter(e=&gt;positionSelect.value===&#x27;all&#x27;||e.position===Number(positionSelect.value));
+    const matrix=equipments.map(eq=&gt;({eq,values:monthNames.map((name,i)=&gt;({name,i,total:matrixEvents.filter(e=&gt;e.equipment===eq&amp;&amp;e.month&lt;=i).reduce((n,e)=&gt;n+e.count,0)}))}));
+    const peak=Math.max(1,...matrix.flatMap(r=&gt;r.values.filter(d=&gt;d.i&lt;=end).map(d=&gt;d.total)));
+    root.querySelector(&#x27;#trend-scope&#x27;).textContent=`ทุก Equipment / ${positionSelect.value===&#x27;all&#x27;?&#x27;ทุกตำแหน่ง&#x27;:&#x27;MD-&#x27;+positionSelect.value} · ยอดสะสมถึงรายงานล่าสุด ${monthNames[end]} 2026 · เดือนที่ไม่มีรายงานไม่ถือว่าเป็น 0`;
+    root.querySelector(&#x27;#equipment-cell-detail&#x27;).hidden=true;
+    root.querySelector(&#x27;#equipment-trend&#x27;).innerHTML=`&lt;table class=&quot;table table-sm equipment-matrix&quot;&gt;&lt;caption class=&quot;sr-only&quot;&gt;ยอดสะสมแปรงถ่านแยกตาม Equipment และเดือน หน่วยก้อน&lt;/caption&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Equipment / เดือน&lt;/th&gt;${monthNames.map((m,i)=&gt;`&lt;th scope=&quot;col&quot;&gt;${i&lt;rows.length?rows[i].m:m}&lt;/th&gt;`).join(&#x27;&#x27;)}&lt;th scope=&quot;col&quot;&gt;รวมถึง ${rows[end].m}&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;${matrix.map(r=&gt;`&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;${r.eq}&lt;/th&gt;${r.values.map(d=&gt;d.i&gt;end?&#x27;&lt;td class=&quot;text-center&quot;&gt;ไม่มีรายงาน&lt;/td&gt;&#x27;:`&lt;td&gt;&lt;button type=&quot;button&quot; class=&quot;matrix-cell cursor-interaction&quot; data-matrix-eq=&quot;${r.eq}&quot; data-matrix-month=&quot;${d.i}&quot; aria-label=&quot;${r.eq} ${d.name} สะสม ${d.total} ก้อน กดดูรายละเอียด&quot; style=&quot;--cell-strength:${d.total?12+Math.round(d.total/peak*45):0}%&quot;&gt;${d.total}&lt;/button&gt;&lt;/td&gt;`).join(&#x27;&#x27;)}&lt;td class=&quot;text-end tabular-nums&quot;&gt;${r.values[end].total}&lt;/td&gt;&lt;/tr&gt;`).join(&#x27;&#x27;)}&lt;/tbody&gt;&lt;/table&gt;`;
     root.querySelector(&#x27;#history-rows&#x27;).innerHTML=selected.length?[...selected].sort((a,b)=&gt;b.month-a.month).map(e=&gt;`&lt;tr&gt;&lt;td&gt;${rows[e.month].m} 2026&lt;details&gt;&lt;summary class=&quot;cursor-interaction text-small&quot;&gt;แหล่งข้อมูล&lt;/summary&gt;&lt;span class=&quot;text-small&quot;&gt;${rows[e.month].file} · หน้า 1 · ตารางรายการสรุปที่ได้เปลี่ยน&lt;/span&gt;&lt;/details&gt;&lt;/td&gt;&lt;td&gt;${e.equipment} MD-${e.position}&lt;/td&gt;&lt;td&gt;${e.type}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${e.count}&lt;/td&gt;&lt;td&gt;${formatDate(e.date)}&lt;/td&gt;&lt;td&gt;${e.note||&#x27;วันที่อ้างอิงจากตารางหลัก; ไม่ยืนยันวันเปลี่ยน&#x27;}&lt;/td&gt;&lt;/tr&gt;`).join(&#x27;&#x27;):&#x27;&lt;tr&gt;&lt;td colspan=&quot;6&quot;&gt;ไม่พบบันทึก ไม่ใช่ยืนยันว่าไม่เคยเปลี่ยน&lt;/td&gt;&lt;/tr&gt;&#x27;;
   };
+  root.querySelector(&#x27;#equipment-trend&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{
+    const cell=e.target.closest(&#x27;[data-matrix-eq]&#x27;);if(!cell)return;
+    const eq=cell.dataset.matrixEq,month=Number(cell.dataset.matrixMonth);
+    const list=events.filter(x=&gt;x.equipment===eq&amp;&amp;x.month&lt;=month&amp;&amp;(positionSelect.value===&#x27;all&#x27;||x.position===Number(positionSelect.value)));
+    const total=list.reduce((n,x)=&gt;n+x.count,0),monthly=list.filter(x=&gt;x.month===month).reduce((n,x)=&gt;n+x.count,0);
+    const panel=root.querySelector(&#x27;#equipment-cell-detail&#x27;);
+    panel.innerHTML=`&lt;div class=&quot;viz-row&quot;&gt;&lt;h3&gt;${eq} · ${monthNames[month]} 2026&lt;/h3&gt;&lt;button type=&quot;button&quot; class=&quot;btn&quot; data-close-matrix&gt;ซ่อนรายละเอียด&lt;/button&gt;&lt;/div&gt;&lt;p&gt;สะสมตั้งแต่มกราคม ${total} ก้อน · เปลี่ยนในเดือนนี้ ${monthly} ก้อน&lt;/p&gt;&lt;p class=&quot;text-small&quot;&gt;วันที่บันทึกตามรายงาน ไม่ใช่วันเปลี่ยนที่ยืนยัน&lt;/p&gt;${list.length?`&lt;ul&gt;${list.map(x=&gt;`&lt;li&gt;${monthNames[x.month]} · MD-${x.position} · ${x.type} ${x.count} ก้อน · วันที่บันทึก ${formatDate(x.date)}${x.note?&#x27; · &#x27;+x.note:&#x27;&#x27;}&lt;/li&gt;`).join(&#x27;&#x27;)}&lt;/ul&gt;`:&#x27;&lt;p&gt;ไม่พบบันทึกการเปลี่ยนในช่วงนี้&lt;/p&gt;&#x27;}`;
+    panel.hidden=false;
+  });
+  root.querySelector(&#x27;#equipment-cell-detail&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;{if(e.target.closest(&#x27;[data-close-matrix]&#x27;))root.querySelector(&#x27;#equipment-cell-detail&#x27;).hidden=true;});
   const saveState=()=&gt;{const opened=[...root.querySelectorAll(&#x27;[data-month]&#x27;)].filter(d=&gt;d.open).map(d=&gt;Number(d.dataset.month));window.openai?.setWidgetState?.({modelContent:{reportMonth:monthNames[Number(monthSelect.value)],equipment:equipmentSelect.value,position:positionSelect.value,monthsOpened:opened.map(i=&gt;rows[i].name)},privateContent:{reportMonth:monthSelect.value,opened,equipment:equipmentSelect.value,position:positionSelect.value}})?.catch(()=&gt;{});};
   monthSelect.addEventListener(&#x27;change&#x27;,()=&gt;{renderMonth();renderHistory();saveState();});
   [equipmentSelect,positionSelect].forEach(el=&gt;el.addEventListener(&#x27;change&#x27;,()=&gt;{renderHistory();saveState();}));
