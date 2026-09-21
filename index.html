@@ -1379,11 +1379,8 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;/table&gt;&lt;/div&gt;
   &lt;div class=&quot;text-small&quot;&gt;สถานะหลังเปลี่ยน: ยังไม่ยืนยันจากรายงาน · วันตรวจทั้งสองรายการ 5 ส.ค. 2026&lt;/div&gt;
   &lt;hr&gt;
-  &lt;h3&gt;สรุปผลตรวจแต่ละเดือน&lt;/h3&gt;
-  &lt;div class=&quot;table-responsive&quot;&gt;&lt;table class=&quot;table table-sm&quot;&gt;
-    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;เดือน&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;มีผลตรวจ / สำรอง&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;ต่ำสุด&lt;br&gt;(มม.)&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;จุด &amp;lt;25 มม.&lt;/th&gt;&lt;th class=&quot;text-end&quot;&gt;ฉนวน After ต่ำสุด&lt;br&gt;(MΩ)&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-    &lt;tbody id=&quot;slipring-months&quot;&gt;&lt;/tbody&gt;
-  &lt;/table&gt;&lt;/div&gt;
+  &lt;h3&gt;แนวโน้มผลตรวจรายเดือน&lt;/h3&gt;
+  &lt;div id=&quot;inspection-trends&quot; class=&quot;inspection-trends&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;text-small&quot;&gt;ความยาว: ใช้ค่าต่ำสุดในคอลัมน์ Min · ฉนวน: ใช้คอลัมน์ After โดยแปลง GΩ เป็น MΩ · ไม่มีเกณฑ์ตัดสินผ่าน/ไม่ผ่านฉนวนในเอกสาร&lt;/div&gt;
   &lt;h3&gt;รายละเอียดรายเดือน&lt;/h3&gt;
   &lt;div id=&quot;slipring-details&quot;&gt;&lt;/div&gt;
@@ -1490,6 +1487,13 @@ html,body{background:#f2f2f2!important;color:#565656!important;font-family:&quot
 #slipring-2026 .area-hit{cursor:pointer}
 #slipring-2026 .area-hit:focus{outline:none}
 #slipring-2026 .area-hit:focus circle:last-of-type,#slipring-2026 .area-hit:hover circle:last-of-type{stroke:#51239c;stroke-width:4}
+#slipring-2026 .inspection-trends{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;margin:24px 0}
+#slipring-2026 .inspection-chart{min-width:0;background:#fff;border-radius:20px;padding:18px}
+#slipring-2026 .inspection-chart h3{font-size:17px;margin:0 0 12px}
+#slipring-2026 .inspection-legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;margin-bottom:16px}
+#slipring-2026 .inspection-legend i{display:inline-block;width:10px;height:10px;margin-right:6px}
+#slipring-2026 .inspection-plot svg{display:block;font:12px &quot;Segoe UI&quot;,Tahoma,sans-serif;fill:#595959}
+@media(max-width:800px){#slipring-2026 .inspection-trends{grid-template-columns:1fr}#slipring-2026 .inspection-chart{padding:12px 4px}}
 &lt;/style&gt;
 &lt;script&gt;
 (() =&gt; {
@@ -1503,7 +1507,22 @@ html,body{background:#f2f2f2!important;color:#565656!important;font-family:&quot
     {m:&#x27;มิ.ย.&#x27;,name:&#x27;มิถุนายน&#x27;,file:&#x27;06. Jun 26.pdf&#x27;,n:28,s:6,min:25.17,ir:86.6,a:16,b:6,stock:[310,142],text:&#x27;ไม่พบค่าต่ำกว่า 25 มม. ค่าต่ำสุด S2 MD-2 = 25.17 มม.; ฉนวน After ต่ำสุด S2A MD-4 = 86.6 MΩ รายงานมีวันตรวจในมิถุนายนและกรกฎาคม&#x27;},
     {m:&#x27;ก.ค.&#x27;,name:&#x27;กรกฎาคม&#x27;,file:&#x27;07. Jul 26.pdf&#x27;,n:28,s:6,min:19.75,ir:110.1,a:32,b:7,stock:[310,147],text:&#x27;พบ 5 จุดต่ำกว่า 25 มม. ใน B3 MD-1 และ C1 MD-1; ค่าต่ำสุด B3 L3 = 19.75 มม. รายงานระบุเปลี่ยน B3 4 ชิ้น และ C1 3 ชิ้น แต่ไม่มีผลวัดหลังเปลี่ยนที่แยกชัดเจน; ฉนวน After ต่ำสุด S3 MD-1 = 110.1 MΩ&#x27;}
   ];
-  root.querySelector(&#x27;#slipring-months&#x27;).innerHTML = rows.map((r,i) =&gt; `&lt;tr&gt;&lt;th&gt;${r.m}&lt;/th&gt;&lt;td class=&quot;text-end&quot;&gt;${r.n} / ${r.s}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${r.min.toFixed(2)}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${i===6?5:0}&lt;/td&gt;&lt;td class=&quot;text-end&quot;&gt;${r.ir}&lt;/td&gt;&lt;/tr&gt;`).join(&#x27;&#x27;);
+  const drawInspectionTrends=()=&gt;{
+    const charts=[
+      {title:&#x27;รายการที่มีผลตรวจและมอเตอร์สำรอง&#x27;,unit:&#x27;รายการ&#x27;,series:[{name:&#x27;มีผลตรวจ&#x27;,color:&#x27;#12a4ca&#x27;,values:rows.map(r=&gt;r.n)},{name:&#x27;สำรอง&#x27;,color:&#x27;#9258ee&#x27;,values:rows.map(r=&gt;r.s)}]},
+      {title:&#x27;ความยาวแปรงถ่านต่ำสุด&#x27;,unit:&#x27;มม.&#x27;,threshold:25,series:[{name:&#x27;ความยาวต่ำสุด&#x27;,color:&#x27;#12a4ca&#x27;,values:rows.map(r=&gt;r.min)}]},
+      {title:&#x27;จุดที่ความยาวต่ำกว่า 25 มม.&#x27;,unit:&#x27;จุด&#x27;,series:[{name:&#x27;ต่ำกว่าเกณฑ์&#x27;,color:&#x27;#d50c8b&#x27;,values:rows.map((r,i)=&gt;i===6?5:0)}]},
+      {title:&#x27;ค่าฉนวน After ต่ำสุด&#x27;,unit:&#x27;MΩ&#x27;,series:[{name:&#x27;ฉนวน After&#x27;,color:&#x27;#9258ee&#x27;,values:rows.map(r=&gt;r.ir)}]}
+    ];
+    const host=root.querySelector(&#x27;#inspection-trends&#x27;);
+    host.innerHTML=charts.map(c=&gt;`&lt;div class=&quot;inspection-chart&quot;&gt;&lt;h3&gt;${c.title}&lt;/h3&gt;&lt;div class=&quot;inspection-legend&quot;&gt;${c.series.map(s=&gt;`&lt;span&gt;&lt;i style=&quot;background:${s.color}&quot;&gt;&lt;/i&gt;${s.name}&lt;/span&gt;`).join(&#x27;&#x27;)}${c.threshold?&#x27;&lt;span&gt;เส้นประ: เกณฑ์ 25 มม.&lt;/span&gt;&#x27;:&#x27;&#x27;}&lt;/div&gt;&lt;div class=&quot;inspection-plot&quot;&gt;&lt;/div&gt;&lt;/div&gt;`).join(&#x27;&#x27;);
+    host.querySelectorAll(&#x27;.inspection-plot&#x27;).forEach((plot,j)=&gt;{
+      const c=charts[j],w=Math.max(320,plot.clientWidth),l=52,r=w-22,t=30,b=220,max=Math.max(...c.series.flatMap(s=&gt;s.values),c.threshold||0),top=Math.ceil(max*1.22),x=i=&gt;l+12+i*(r-l-24)/6,y=n=&gt;b-n/top*(b-t);
+      plot.innerHTML=`&lt;svg width=&quot;100%&quot; viewBox=&quot;0 0 ${w} 282&quot; role=&quot;img&quot; aria-label=&quot;${c.title}: ${c.series.map(s=&gt;s.name+&#x27; &#x27;+s.values.map((n,i)=&gt;rows[i].m+&#x27; &#x27;+n).join(&#x27;, &#x27;)).join(&#x27;; &#x27;)}&quot;&gt;&lt;text x=&quot;${l}&quot; y=&quot;15&quot;&gt;${c.unit}&lt;/text&gt;${[0,1,2,3].map(i=&gt;{const n=Math.round(top*i/3);return `&lt;line x1=&quot;${l}&quot; x2=&quot;${r}&quot; y1=&quot;${y(n)}&quot; y2=&quot;${y(n)}&quot; stroke=&quot;#e2e2e2&quot;/&gt;&lt;text x=&quot;${l-8}&quot; y=&quot;${y(n)+4}&quot; text-anchor=&quot;end&quot;&gt;${n}&lt;/text&gt;`;}).join(&#x27;&#x27;)}${c.threshold?`&lt;line x1=&quot;${l}&quot; x2=&quot;${r}&quot; y1=&quot;${y(c.threshold)}&quot; y2=&quot;${y(c.threshold)}&quot; stroke=&quot;#d50c8b&quot; stroke-dasharray=&quot;6 4&quot;/&gt;`:&#x27;&#x27;}${c.series.map(s=&gt;`&lt;path d=&quot;${s.values.map((n,i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;} ${x(i)} ${y(n)}`).join(&#x27; &#x27;)}&quot; fill=&quot;none&quot; stroke=&quot;${s.color}&quot; stroke-width=&quot;2.5&quot;/&gt;${s.values.map((n,i)=&gt;`&lt;g&gt;&lt;title&gt;${rows[i].name}: ${s.name} ${n} ${c.unit}&lt;/title&gt;&lt;circle cx=&quot;${x(i)}&quot; cy=&quot;${y(n)}&quot; r=&quot;5&quot; fill=&quot;white&quot; stroke=&quot;${s.color}&quot; stroke-width=&quot;2&quot;/&gt;&lt;text x=&quot;${x(i)}&quot; y=&quot;${y(n)-12}&quot; text-anchor=&quot;middle&quot;&gt;${n}&lt;/text&gt;&lt;/g&gt;`).join(&#x27;&#x27;)}`).join(&#x27;&#x27;)}${rows.map((d,i)=&gt;`&lt;text x=&quot;${x(i)}&quot; y=&quot;245&quot; text-anchor=&quot;middle&quot;&gt;${d.m}&lt;/text&gt;`).join(&#x27;&#x27;)}&lt;text x=&quot;${(l+r)/2}&quot; y=&quot;275&quot; text-anchor=&quot;middle&quot;&gt;เดือนรายงาน 2026&lt;/text&gt;&lt;/svg&gt;`;
+    });
+  };
+  let inspectionWidth=0;new ResizeObserver(entries=&gt;{const w=Math.round(entries[0].contentRect.width);if(w!==inspectionWidth){inspectionWidth=w;drawInspectionTrends();}}).observe(root.querySelector(&#x27;#inspection-trends&#x27;));
+  drawInspectionTrends();
   root.querySelector(&#x27;#slipring-details&#x27;).innerHTML = rows.map((r,i) =&gt; `&lt;details data-month=&quot;${i}&quot;&gt;&lt;summary class=&quot;cursor-interaction&quot;&gt;${r.name} · เปลี่ยน ${r.a+r.b} ชิ้น${i===6?&#x27; · พบค่าต่ำกว่าเกณฑ์&#x27;:&#x27;&#x27;}&lt;/summary&gt;&lt;p&gt;${r.text}&lt;/p&gt;&lt;div class=&quot;detail-metrics&quot;&gt;&lt;span&gt;C40Z3: เปลี่ยน ${r.a} / คงเหลือ ${r.stock[0]}&lt;/span&gt;&lt;span&gt;CM3H: เปลี่ยน ${r.b} / คงเหลือ ${r.stock[1]}&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;text-small&quot;&gt;แหล่งข้อมูล: ${r.file} · หน้า 1&lt;/div&gt;&lt;/details&gt;`).join(&#x27;&#x27;);
   // Source rows: [equipment, drive, brush count, brush type, reported date, evidence note].
   // Reported dates are contextual dates from the main table, never confirmed replacement dates.
